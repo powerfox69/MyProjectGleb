@@ -9,12 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let myName = "Gleb"
+    let name = "Gleb"
+    let surName = "Mosko"
+    
+    var fullNmae: String {
+        "\(name) \(surName)"
+    }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        print("Меня зовут \(myName), я создал свое первое приложение")
+        print("Меня зовут \(name), я создал свое первое приложение")
+        print(fullNmae)
         // Do any additional setup after loading the view.
     }
 
