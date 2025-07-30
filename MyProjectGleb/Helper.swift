@@ -1,0 +1,25 @@
+//
+//  Helper.swift
+//  MyProjectGleb
+//
+//  Created by Gleb on 7/30/25.
+//
+
+import Foundation
+
+class Helper {
+    
+    private var people: [Person] = []
+    
+    
+    
+    
+    func addPerson(_ person: Person) {
+        people.append(person)
+    }
+    
+    func getListPerson() -> [Person] {
+        people
+    }
+    
+}
