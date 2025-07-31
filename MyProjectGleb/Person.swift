@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Person {
+struct Person {
     
     var name = "Gleb"
     var surName = "Mosko"
