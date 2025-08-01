@@ -11,9 +11,6 @@ class Helper {
     
     private var people: [User] = []
     
-    
-    
-    
     func addPerson(_ person: User) {
         people.append(person)
     }

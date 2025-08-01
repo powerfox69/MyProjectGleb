@@ -9,15 +9,10 @@ import Foundation
 
 struct Person {
     
-    var name = "Gleb"
-    var surName = "Mosko"
+    let name: String
+    let surname: String
     
     var fullName: String {
-        "\(name) \(surName)"
-    }
-    
-    init(name: String, surName: String) {
-        self.name = name
-        self.surName = surName
+        "\(name) \(surname)"
     }
 }

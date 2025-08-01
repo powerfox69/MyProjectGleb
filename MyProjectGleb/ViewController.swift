@@ -9,8 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let helper = Helper()
-    
+   private let helper = Helper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,12 +17,12 @@ class ViewController: UIViewController {
         let personOne = User(
             login: "bob123",
             password: "1234",
-            personalInformation: Person.init(name: "Иван", surName: "Жук"))
+            personalInformation: Person(name: "Иван", surname: "Жук"))
         
         let personTwo = User(
             login: "tot123",
             password: "4321",
-            personalInformation: Person.init(name: "Ольга", surName: "Конь"))
+            personalInformation: Person(name: "Ольга", surname: "Конь"))
         
         helper.addPerson(personOne)
         helper.addPerson(personTwo)
@@ -33,7 +32,5 @@ class ViewController: UIViewController {
             print(person.personalInformation.fullName)
         }
     }
-
-
 }
 
