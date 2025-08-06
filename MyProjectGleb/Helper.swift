@@ -19,4 +19,7 @@ class Helper {
         people
     }
     
+    func addPersons(_ persons : [User]) {
+        people.append(contentsOf: persons)
+    }
 }
