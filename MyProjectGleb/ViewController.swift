@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .brown
-        view.alpha = 1
         
         helper.addPersons(userRepository.getPersons())
         
@@ -44,7 +43,6 @@ class ViewController: UIViewController {
         }
         textLabel.font = .systemFont(ofSize: 25, weight: .bold)
         textLabel.textColor = .blue
-        textLabel.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
         textLabel.textAlignment = .center
     }
     
@@ -65,11 +63,9 @@ class ViewController: UIViewController {
     
     private func setupLayout() {
         stackViwe.translatesAutoresizingMaskIntoConstraints = false
-        button.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
         stackViwe.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-        stackViwe.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         stackViwe.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
         stackViwe.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80)
         ])
