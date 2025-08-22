@@ -13,7 +13,11 @@ class ViewController: UIViewController {
    private let userRepository = UserRepository()
    
     private let textLabel = UILabel()
-    private let button = UIButton()
+    private let showButton = Button(title: "Show New User",
+                                    backgroundColor: .red)
+    private let hideButton = Button(title: "Hide User",
+                                    backgroundColor: .green,
+                                    shadow: true)
     private let stackViwe = UIStackView()
     
     override func viewDidLoad() {
@@ -28,7 +32,6 @@ class ViewController: UIViewController {
         }
         
         setapLabel()
-        setupButton()
         setupStackView()
         view.addSubview(stackViwe)
         setupLayout()
@@ -46,19 +49,15 @@ class ViewController: UIViewController {
         textLabel.textAlignment = .center
     }
     
-    private func setupButton() {
-        button.setTitle("Show FullName", for: .normal)
-        button.backgroundColor = .green
-        button.layer.cornerRadius = 8
-    }
-    
     private func setupStackView() {
         stackViwe.axis = .vertical
         stackViwe.distribution = .fill
         stackViwe.alignment = .fill
+        stackViwe.spacing = 10
         
         stackViwe.addArrangedSubview(textLabel)
-        stackViwe.addArrangedSubview(button)
+        stackViwe.addArrangedSubview(showButton)
+        stackViwe.addArrangedSubview(hideButton)
     }
     
     private func setupLayout() {
