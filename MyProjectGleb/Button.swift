@@ -36,4 +36,10 @@ class Button: UIButton {
             heightAnchor.constraint(equalToConstant: 100)
         ])
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let shadowPath = UIBezierPath(rect: bounds)
+        layer.shadowPath = shadowPath.cgPath
+    }
 }
