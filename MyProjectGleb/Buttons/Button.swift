@@ -20,6 +20,15 @@ class Button: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let shadowPath = UIBezierPath(rect: bounds)
+        layer.shadowPath = shadowPath.cgPath
+    }
+}
+// MARK: - Setup
+
+extension Button {
     private func setupButton(title: String, backgroundColor: UIColor, shadow: Bool) {
         setTitle(title, for: .normal)
         self.backgroundColor = backgroundColor
@@ -35,11 +44,5 @@ class Button: UIButton {
         NSLayoutConstraint.activate([
             heightAnchor.constraint(equalToConstant: 100)
         ])
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let shadowPath = UIBezierPath(rect: bounds)
-        layer.shadowPath = shadowPath.cgPath
     }
 }
