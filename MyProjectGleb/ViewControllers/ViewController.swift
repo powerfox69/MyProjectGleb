@@ -16,24 +16,28 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .brown
-        
-        helper.addPersons(userRepository.getPersons())
-        
-        let allPeople = helper.getListPerson()
-        for person in allPeople {
-            print(person.personalInformation.fullName)
-        }
-        
-        setupLabel()
-        setupStackView()
-        view.addSubview(stackViwe)
-        setupLayout()
+        setupViewController()
     }
 }
 //MARK: - Setup view
    private extension ViewController {
-        func setupLabel() {
+       func setupViewController() {
+           view.backgroundColor = .brown
+           
+           helper.addPersons(userRepository.getPersons())
+           
+           let allPeople = helper.getListPerson()
+           for person in allPeople {
+               print(person.personalInformation.fullName)
+           }
+           
+           setupLabel()
+           setupStackView()
+           view.addSubview(stackViwe)
+           setupLayout()
+       }
+       
+       func setupLabel() {
             let allPeople = helper.getListPerson()
             if let randomUser = allPeople.randomElement() {
                 textLabel.text = randomUser.personalInformation.fullName
