@@ -42,7 +42,8 @@ extension Button {
         }
         
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 100)
+            heightAnchor.constraint(equalToConstant: 50),
+            widthAnchor.constraint(equalToConstant: 200)
         ])
     }
 }

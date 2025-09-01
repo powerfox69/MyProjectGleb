@@ -17,10 +17,29 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
+        setupButtonActions()
+    }
+    
+    @objc
+    private func showRandomUser() {
+      setupLabel()
     }
 }
 //MARK: - Setup view
    private extension ViewController {
+       
+       func setupButtonActions() {
+           showButton.addTarget(
+            self,
+            action: #selector(showRandomUser),
+            for: .touchUpInside
+           )
+           
+           hideButton.addAction(UIAction { _ in
+               self.textLabel.text = ""
+           }, for: .touchUpInside)
+       }
+       
        func setupViewController() {
            view.backgroundColor = .brown
            
@@ -53,7 +72,7 @@ class ViewController: UIViewController {
             stackViwe.axis = .vertical
             stackViwe.distribution = .fill
             stackViwe.alignment = .fill
-            stackViwe.spacing = 10
+            stackViwe.spacing = 20
             
             stackViwe.addArrangedSubview(textLabel, showButton, hideButton)
         }
@@ -66,8 +85,7 @@ extension ViewController {
         
         NSLayoutConstraint.activate([
             stackViwe.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            stackViwe.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
-            stackViwe.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80)
+           stackViwe.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
 }
